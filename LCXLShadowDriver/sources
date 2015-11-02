@@ -1,0 +1,6 @@
+
+TARGETNAME=LCXLShadowDriver
+TARGETPATH=..\Bin
+TARGETTYPE=DRIVER
+
+SOURCES=aescrypt.c aeskey.c aesex.c aestab.c diskiocode.c winkernel.c driverlib.c driver.c diskfilter.c diskvolfilter.c filesysfilter.c bitmapmgr.c lcxlshadow.rc

@@ -1,0 +1,19 @@
+LIBRARY LCXLShadow
+;LCXL
+EXPORTS
+DI_IsDriverRunning
+DI_InShadowMode
+DI_Open
+DI_Close
+DI_GetRandomId
+DI_ValidateCode
+DI_GetDiskList
+DI_GetDriverSetting
+DI_SetNextRebootShadowMode
+DI_GetCustomDiskList
+DI_SetCustomDiskList
+DI_AppRequest
+DI_StartShadowMode
+DI_SetSaveDataWhenShutdown
+DI_VerifyPassword
+DI_SetPassword

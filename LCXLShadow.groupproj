@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7E35BBF5-5B77-43AE-A60A-8176EA9CEE57}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Dll\LCXLShadow.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LCXLShadowSer\LCXLShadowSer.dproj">
+            <Dependencies>Dll\LCXLShadow.dproj</Dependencies>
+        </Projects>
+        <Projects Include="LCXLShadowSer\LCXLShadowSerTest.dproj">
+            <Dependencies>LCXLShadowSer\LCXLShadowSer.dproj</Dependencies>
+        </Projects>
+        <Projects Include="LCXLShadowConsole\LCXLShadowConsole.dproj">
+            <Dependencies>LCXLShadowSer\LCXLShadowSer.dproj;LCXLShadowSer\LCXLShadowSerTest.dproj</Dependencies>
+        </Projects>
+        <Projects Include="驱动测试\DriverTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MsgInWinlogon\LCXLMsg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LCXLShadowConfig\LCXLShadowConfig.dproj">
+            <Dependencies>LCXLShadowSer\LCXLShadowSer.dproj;Dll\LCXLShadow.dproj;LCXLShadowSer\LCXLShadowSerTest.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LCXLShadow">
+        <MSBuild Projects="Dll\LCXLShadow.dproj"/>
+    </Target>
+    <Target Name="LCXLShadow:Clean">
+        <MSBuild Projects="Dll\LCXLShadow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLShadow:Make">
+        <MSBuild Projects="Dll\LCXLShadow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LCXLShadowSer" DependsOnTargets="LCXLShadow">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSer.dproj"/>
+    </Target>
+    <Target Name="LCXLShadowSer:Clean" DependsOnTargets="LCXLShadow:Clean">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLShadowSer:Make" DependsOnTargets="LCXLShadow:Make">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LCXLShadowSerTest" DependsOnTargets="LCXLShadowSer">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSerTest.dproj"/>
+    </Target>
+    <Target Name="LCXLShadowSerTest:Clean" DependsOnTargets="LCXLShadowSer:Clean">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLShadowSerTest:Make" DependsOnTargets="LCXLShadowSer:Make">
+        <MSBuild Projects="LCXLShadowSer\LCXLShadowSerTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LCXLShadowConsole" DependsOnTargets="LCXLShadowSer;LCXLShadowSerTest">
+        <MSBuild Projects="LCXLShadowConsole\LCXLShadowConsole.dproj"/>
+    </Target>
+    <Target Name="LCXLShadowConsole:Clean" DependsOnTargets="LCXLShadowSer:Clean;LCXLShadowSerTest:Clean">
+        <MSBuild Projects="LCXLShadowConsole\LCXLShadowConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLShadowConsole:Make" DependsOnTargets="LCXLShadowSer:Make;LCXLShadowSerTest:Make">
+        <MSBuild Projects="LCXLShadowConsole\LCXLShadowConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DriverTest">
+        <MSBuild Projects="驱动测试\DriverTest.dproj"/>
+    </Target>
+    <Target Name="DriverTest:Clean">
+        <MSBuild Projects="驱动测试\DriverTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DriverTest:Make">
+        <MSBuild Projects="驱动测试\DriverTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LCXLMsg">
+        <MSBuild Projects="MsgInWinlogon\LCXLMsg.dproj"/>
+    </Target>
+    <Target Name="LCXLMsg:Clean">
+        <MSBuild Projects="MsgInWinlogon\LCXLMsg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLMsg:Make">
+        <MSBuild Projects="MsgInWinlogon\LCXLMsg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LCXLShadowConfig" DependsOnTargets="LCXLShadowSer;LCXLShadow;LCXLShadowSerTest">
+        <MSBuild Projects="LCXLShadowConfig\LCXLShadowConfig.dproj"/>
+    </Target>
+    <Target Name="LCXLShadowConfig:Clean" DependsOnTargets="LCXLShadowSer:Clean;LCXLShadow:Clean;LCXLShadowSerTest:Clean">
+        <MSBuild Projects="LCXLShadowConfig\LCXLShadowConfig.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LCXLShadowConfig:Make" DependsOnTargets="LCXLShadowSer:Make;LCXLShadow:Make;LCXLShadowSerTest:Make">
+        <MSBuild Projects="LCXLShadowConfig\LCXLShadowConfig.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LCXLShadow;LCXLShadowSer;LCXLShadowSerTest;LCXLShadowConsole;DriverTest;LCXLMsg;LCXLShadowConfig"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LCXLShadow:Clean;LCXLShadowSer:Clean;LCXLShadowSerTest:Clean;LCXLShadowConsole:Clean;DriverTest:Clean;LCXLMsg:Clean;LCXLShadowConfig:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LCXLShadow:Make;LCXLShadowSer:Make;LCXLShadowSerTest:Make;LCXLShadowConsole:Make;DriverTest:Make;LCXLMsg:Make;LCXLShadowConfig:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

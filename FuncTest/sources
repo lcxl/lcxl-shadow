@@ -1,0 +1,6 @@
+
+TARGETNAME=LCXLTestDriver
+TARGETPATH=..\Bin
+TARGETTYPE=DRIVER
+
+SOURCES=driver.c winkernel.c

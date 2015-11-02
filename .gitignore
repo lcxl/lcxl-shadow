@@ -26,3 +26,26 @@
 *.exe
 *.out
 *.app
+
+# Other Files
+*.exp
+.ilk
+Debug
+Release
+*.suo
+ipch
+*.log
+*.mac
+*.backup
+*.sdf
+*.user
+*.idc
+*.err
+*.aps
+
+# Delphi Files
+__history
+*.tvsconfig
+*.local
+*.identcache
+*.otares

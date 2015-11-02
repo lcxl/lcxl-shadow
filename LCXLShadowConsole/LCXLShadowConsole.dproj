@@ -1,0 +1,334 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{416DE9BE-1253-4EEC-8DC9-6533CF2CF1CF}</ProjectGuid>
+        <MainSource>LCXLShadowConsole.dpr</MainSource>
+        <ProjectVersion>15.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_UnitSearchPath>D:\My_Software\Delphi\Third Libs\jedi-apilib\jwapi\Win32API;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>LCXLShadowConsole_Icon2.ico</Icon_MainIcon>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=0.3.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=0.3.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+        <VerInfo_Locale>2052</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MajorVer>0</VerInfo_MajorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
+        <DCC_OutputDRCFile>true</DCC_OutputDRCFile>
+        <DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_K>false</DCC_K>
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <DCC_ExeOutput>..\bin\i386</DCC_ExeOutput>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=1.0.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <DCC_ExeOutput>..\bin\amd64</DCC_ExeOutput>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=1.0.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Debugger_RunParams>/Remote 192.168.1.103:9999</Debugger_RunParams>
+        <Debugger_DebugSourcePath>E:\LCXLCode\Delphi\Third Libs\LCXL\LCXL IOCP V2\trunk\src\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=0.3.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=1.0.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=0.3.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=罗澄曦;FileDescription=LCXLShadow影子系统控制端;FileVersion=0.3.0.0;InternalName=LCXLShadowConsole.exe;LegalCopyright=版权所有 (C) 2012 罗澄曦;LegalTrademarks=LCXBox;OriginalFilename=LCXLShadowConsole.exe;ProductName=LCXBox;ProductVersion=1.0.0.0;Comments=LCXLShadow影子系统控制端</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="untMain.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="untResString.pas"/>
+        <DCCReference Include="untSetShadowMode.pas">
+            <Form>frmSetShadowMode</Form>
+        </DCCReference>
+        <DCCReference Include="untSystemShutdown.pas">
+            <Form>frmSystemShutdown</Form>
+        </DCCReference>
+        <DCCReference Include="uBitmapUtils.pas"/>
+        <DCCReference Include="untSetPassword.pas">
+            <Form>frmSetPassword</Form>
+        </DCCReference>
+        <DCCReference Include="untVerifyPassword.pas">
+            <Form>frmVerifyPassword</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="untShadowing.pas">
+            <Form>frmShadowing</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\ElAES.pas"/>
+        <DCCReference Include="..\untCommFunc.pas"/>
+        <DCCReference Include="..\untSerInterface.pas"/>
+        <DCCReference Include="untClientSockMgr.pas"/>
+        <DCCReference Include="..\untCommDataType.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">0</VersionInfo>
+                    <VersionInfo Name="MinorVer">3</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">2052</VersionInfo>
+                    <VersionInfo Name="CodePage">936</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">罗澄曦</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">LCXLShadow影子系统控制端</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">0.3.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">LCXLShadowConsole.exe</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright">版权所有 (C) 2012 罗澄曦</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks">LCXBox</VersionInfoKeys>
+                    <VersionInfoKeys Name="OriginalFilename">LCXLShadowConsole.exe</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">LCXBox</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">0.3.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments">LCXLShadow影子系统控制端</VersionInfoKeys>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">LCXLShadowConsole.dpr</Source>
+                </Source>
+                <Language>
+                    <Language Name="ProjectLang">$00000804</Language>
+                    <Language Name="ActiveLang">ENU</Language>
+                </Language>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k190.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp190.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+                <RDP_Source_Files>
+                    <RDP_Source_Files Name="Item0">Release\Win32\LCXLShadowConsole.drc</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item1">Debug\Win32\LCXLShadowConsole.drc</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item2">..\bin\LCXLShadowConsole.drc</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item3">untMain.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item4">untSetShadowMode.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item5">untSystemShutdown.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item6">untSetPassword.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item7">untVerifyPassword.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item8">untShadowing.dfm</RDP_Source_Files>
+                    <RDP_Source_Files Name="Item9">..\bin\i386\LCXLShadowConsole.drc</RDP_Source_Files>
+                </RDP_Source_Files>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <Deployment>
+                <DeployFile LocalName="..\bin\LCXLShadowConsole.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>LCXLShadowConsole.rsm</RemoteName>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\bin\LCXLShadowConsole.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32"/>
+                </DeployFile>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+            </Deployment>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(MSBuildProjectName).deployproj')" Project="$(MSBuildProjectName).deployproj"/>
+</Project>
