@@ -42,6 +42,8 @@ ipch
 *.idc
 *.err
 *.aps
+*.tlog
+*.opensdf
 
 # Delphi Files
 __history
