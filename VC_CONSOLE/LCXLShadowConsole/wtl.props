@@ -3,7 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>D:\My_Software\CPP\第三方代码\wtl81_12085\Include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\LCXLCode\CPP\third_code\WTL91_5270_Beta\Include;$(IncludePath)</IncludePath>
+    <_PropertySheetDisplayName>wtl</_PropertySheetDisplayName>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup />
