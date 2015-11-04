@@ -51,3 +51,4 @@ __history
 *.local
 *.identcache
 *.otares
+*.dcu
