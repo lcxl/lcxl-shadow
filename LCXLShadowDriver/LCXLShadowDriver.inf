@@ -21,7 +21,7 @@ DefaultDestDir = 12
 [SourceDisksFiles]
 
 
-;[Manufacturer]
+[Manufacturer]
 ;%ManufacturerName%=Standard,NT$ARCH$
 
 [Standard.NT$ARCH$]
