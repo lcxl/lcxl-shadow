@@ -52,3 +52,10 @@ __history
 *.identcache
 *.otares
 *.dcu
+
+#
+.vs
+bin
+Win8Debug
+LCXLShadowDriver/Win8 Debug/
+LCXLShadowDriver Package/Win8 Debug/

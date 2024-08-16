@@ -9,6 +9,7 @@ ClassGuid={74CA843E-C991-4B62-B9C7-118AB6583885}
 Provider=%Msft%
 DriverVer=01/01/2008,6.1.5019.0
 CatalogFile= LCXLShadowDriver.cat
+PnpLockdown=1
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -20,8 +21,8 @@ DefaultDestDir = 12
 [SourceDisksFiles]
 
 
-[Manufacturer]
-%ManufacturerName%=Standard,NT$ARCH$
+;[Manufacturer]
+;%ManufacturerName%=Standard,NT$ARCH$
 
 [Standard.NT$ARCH$]
 
